@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+   {%load static %}
+<!--foodpicky -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+    <title>view Restaurants</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/animsition.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/animate.css'%}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+
+
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  text-color:black;
+  text-style:bold;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color:#eee;
+}
+table#t01 th {
+  background-color: #B2F37F;
+  color: black;
+}
+</style>
+
+</head>
+<body>
+     <div class="site-wrapper animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
+         <!--header starts-->
+         <header id="header" class="header-scroll top-header headrom">
+            <!-- .navbar -->
+            <nav class="navbar navbar-dark">
+               <div class="container">
+                  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
+                  <a class="navbar-brand" href="#"> <img class="img-rounded" src="{% static 'images/food-picky-logo.png' %}" alt=""> </a>
+                  <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
+                     <ul class="nav navbar-nav">
+                             <li class="nav-item"> <a class="nav-link active" href="#"> <img width="60px" height="60px" src="{{MEDIA_URL}}{{data.image.url}}" alt="Food logo"> <span class="sr-only">(current)</span></a> </li>
+						  <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{key.username}}</a>
+                                <div class="dropdown-menu"> <a class="dropdown-item" href="#">Profile</a>
+                                   <a class="dropdown -menu"> <a class="dropdown-item" href="restaurants.html"></a> <a class="dropdown-item" href="{% url 'signout' %}">Log Out</a></a>
+                            </li>
+                        <li class="nav-item"> <a class="nav-link deactive" href="{% url 'restlogin' %}">Home <span class="sr-only">(current)</span></a> </li>
+
+
+
+
+
+                     </ul>
+                  </div>
+               </div>
+            </nav>
+            <!-- /.navbar -->
+         </header>
+         <div class="page-wrapper">
+            <!-- top Links -->
+
+            <!-- end:Top links -->
+            <!-- start: Inner page hero -->
+            <section class="inner-page-hero bg-image" data-image-src="{% static 'images/ml.jpg' %}">
+               <div class="profile">
+                  <div class="container">
+                     <div class="row">
+
+                        <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
+                           <div class="image-wrap">
+                             <figure><img src="{{MEDIA_URL}}{{data.image.url}}" alt="Profile Image"></figure>
+
+                           </div>
+
+                        </div>
+                        <!--<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">-->
+                           <!--<div class="pull-left right-text white-txt">-->
+                              <!--<h6><a href="#"></a></h6>-->
+                              <!--<a class="btn btn-small btn-green">Open</a>-->
+                              <!--<p></p>-->
+                              <!--<ul class="nav nav-inline">-->
+                                 <!--<li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i></a> </li>-->
+                                 <!--<li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-motorcycle"></i></a> </li>-->
+                                 <!--<li class="nav-item ratings">-->
+                                    <!--<a class="nav-link" href="#"> <span>-->
+                                    <!--<i class="fa fa-star"></i>-->
+                                    <!--<i class="fa fa-star"></i>-->
+                                    <!--<i class="fa fa-star"></i>-->
+                                    <!--<i class="fa fa-star"></i>-->
+                                    <!--<i class="fa fa-star-o"></i>-->
+                                    <!--</span> </a>-->
+                                 <!--</li>-->
+                              <!--</ul>-->
+                           <!--</div>-->
+                        <!--</div>-->
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+            </section>
+            <!-- end:Inner page hero -->
+      <h2 align="center">STAFF DETAILS</h2>
+
+<table id="t01">
+  <tr>
+    <th>first name</th>
+    <th>Last name</th>
+    <th>Gender</th>
+    <th>Email</th>
+      <th>Mobile Number</th>
+       <th>State</th>
+       <th>Place</th>
+       <th>Date Of Birth</th>
+       <th>Address</th>
+       <th>Joinning Date</th>
+       <th>Staff Identification Photo</th>
+      <th>Action</th>
+      <th>Action</th>
+
+  </tr>
+  <tbody>
+    {% for i in data %}
+    <tr>
+    <td>{{ i.fname }}</td>
+    <td>{{ i.lname }}</td>
+    <td>{{ i.gender }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.phno }}</td>
+        <td>{{ i.state }}</td>
+        <td>{{ i.place }}</td>
+        <td>{{ i.dob }}</td>
+        <td>{{ i.address }}</td>
+        <td>{{ i.jd }}</td>
+    <td><img src="{{MEDIA_URL}} {{ i.image.url }}" width=100px height=100px />
+
+        <td><button><a href="{% url 'staffapprove' bid=i.logid_id %}">Approve</button></a></td>
+         <td><button><a href="{% url 'staffdelete' bid=i.logid_id %}">Remove</button></a></td>
+
+
+
+    </td>
+
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/tether.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/animsition.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap-slider.min.js'%}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js'%}"></script>
+    <script src="{% static 'js/headroom.js'%}"></script>
+    <script src="{% static 'js/foodpicky.min.js'%}"></script>
+</body>
+
+
+<!-- Mirrored from codenpixel.com/demo/foodpicky/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2019 09:18:36 GMT -->
+</html>

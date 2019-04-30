@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+   {%load static %}
+<!--foodpicky -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+    <title>food picky</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/animsition.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/animate.css'%}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet"> </head>
+
+<body class="home">
+    <div class="site-wrapper animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <!--header starts-->
+        <header id="header" class="header-scroll top-header headrom">
+            <!-- .navbar -->
+            <nav class="navbar navbar-dark">
+                <div class="container">
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
+                    <a class="navbar-brand" href="#"> <img class="img-rounded" src="{% static 'images/food-picky-logo.png'%}" alt=""> </a>
+                    <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item"> <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a> </li>
+
+                             <li class="nav-item"> <a class="nav-link deactive" href="{% url 'login' %}">Login & Signup <span  class="sr-only">(current)</span></a> </li>
+
+                            <!--<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Food</a>-->
+                                <!--<div class="dropdown-menu"> <a class="dropdown-item" href="food_results.html">Food results</a> <a class="dropdown-item" href="map_results.html">Map results</a></div>-->
+                            <!--</li>-->
+                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Restaurants</a>
+                                <div class="dropdown-menu"> <a class="dropdown-item" href="restaurants.html"></a>
+                                    <!--<a class="dropdown-item" href="{% url 'restaurants' %}">sign up</a>-->
+                                   <a class="dropdown -menu"> <a class="dropdown-item" href="restaurants.html"></a> <a class="dropdown-item" href="{% url 'login' %}">Login</a></a>
+                                <a class="dropdown -menu"> <a class="dropdown-item" href="restaurants.html"></a> <a class="dropdown-item" href="{% url 'resregistration' %}">Signup</a></a></div>
+                            </li>
+                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Staff</a>
+                                 <div class="dropdown-menu"> <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                                     <a class="dropdown -menu"> <a class="dropdown-item" href="restaurants.html"></a> <a class="dropdown-item" href="{% url 'staffreg' %}">Signup</a></a>
+
+                                    <!--<a class="dropdown-item" href="contact.html">Contact</a> <a class="dropdown-item" href="submition.html">Submit restaurant</a>-->
+                                    <!--<a class="dropdown-item" href="{% url 'registration' %}">Registration</a>-->
+                                    <!--<div class="dropdown-divider"></div> <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a> </div>-->
+                            </li>
+
+                            <li class="nav-item"> <a class="nav-link deactive" href="{% url 'contact' %}">Contact Us <span class="sr-only">(current)</span></a> </li>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- /.navbar -->
+        </header>
+
+<style>
+
+    .success-page{
+  max-width:300px;
+  display:block;
+  margin: 0 auto;
+  text-align: center;
+      position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(50%)
+}
+.success-page img{
+  max-width:62px;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-view-orders{
+  display: block;
+  border:1px solid #47c7c5;
+  width:100px;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding: 10px;
+  color:#fff;
+  background-color:#47c7c5;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+h2{
+  color:#47c7c5;
+    margin-top: 25px;
+
+}
+a{
+  text-decoration: none;
+}
+</style>
+<div class="success-page">
+   <img  src="http://share.ashiknesin.com/green-checkmark.png" class="center" alt="" />
+  <h2>Payment Successful !</h2>
+  <p>Your transaction has been successfully processed</p>
+    <br>
+    <br>
+    <div>
+        <h5>DETAILS</h5>
+        <br>
+        <br>
+
+    </div>
+
+<div>
+
+                                     <p>user name:</p>
+                                     <p>mobile  number:</p>
+                                     <p>product name:</p>
+                                     <p>customer address:</p>
+                                     <p>paid amount:</p>
+                                     <p>Transaction ID:</p>
+                                     <p>Payment mode:</p>
+
+
+     </div>
+  <a href="#" class="btn-view-orders">View Orders</a>
+  <a href="#">Continue Shopping</a>
+</div>
+</div>
+
+
+
+
+
+
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/tether.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/animsition.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap-slider.min.js'%}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js'%}"></script>
+    <script src="{% static 'js/headroom.js'%}"></script>
+    <script src="{% static 'js/foodpicky.min.js'%}"></script>
+</body>
+
+
+<!-- Mirrored from codenpixel.com/demo/foodpicky/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2019 09:17:51 GMT -->
+</html>
